@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
 
+// This is a functional component
 function App() {
+  const [count, setcount] = useState(0);
+
+  const increament = () => {
+    console.log("Adding");
+    setcount(count + 1);
+  };
+
+  const decreament = () => {
+    console.log("sub");
+    setcount(count - 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>React Basics</h1>
+
+      <h3>Creating a plus and - Button</h3>
+      <p>Value of counter is : {count}</p>
+      <button onClick={increament}>+</button>
+      <button onClick={decreament}>-</button>
     </div>
   );
 }
